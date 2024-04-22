@@ -1,0 +1,444 @@
+*, ::after, ::before
+    margin: 0
+    padding: 0
+
+@font-face 
+    font-family: 'Gilroy'
+    src: url("../fonts/Gilroy-Semibold.ttf")
+
+@font-face 
+    font-family: 'Merriweather'
+    src: url("../fonts/Merriweather-Black.ttf")
+
+@mixin respond($breakpoint)
+    @if $breakpoint == phone
+        @media only screen and (max-width: 420px)
+            @content
+
+    @if $breakpoint == tab-port5
+        @media only screen and (max-width: 688px)
+            @content
+
+    @if $breakpoint == tab-port4
+        @media only screen and (max-width: 754px)
+            @content
+
+    @if $breakpoint == tab-port3
+        @media only screen and (max-width: 782px)
+            @content
+    
+    @if $breakpoint == tab-port2
+        @media only screen and (max-width: 836px)
+            @content
+
+    @if $breakpoint == tab-port
+        @media only screen and (max-width: 898px)
+            @content
+    
+    @if $breakpoint == tab-land3
+        @media only screen and (max-width: 1000px)
+            @content
+
+    @if $breakpoint == tab-land2
+        @media only screen and (max-width: 1080px)
+            @content        
+    
+    @if $breakpoint == tab-land
+        @media only screen and (max-width: 1120px)
+            @content
+    
+    @if $breakpoint == big-screen
+        @media only screen and (min-width: 1800px)
+            @content
+
+html
+    font-size: 62.5%
+
+body
+    background-color: #191411
+    font-family: 'Gilroy', sans-serif
+    color: white
+
+.container
+    max-width: 120rem
+    margin: 0 auto
+    
+
+.button
+    background: linear-gradient(96deg, #DA8023 0%, #E2B438 100%) 
+    border-radius: .8rem
+    width: 26rem 
+    height: 6.2rem
+    padding: 1.9rem
+    box-sizing: border-box
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 0
+    cursor: pointer
+    outline: 0
+    font-size: 1.8rem
+    color: #191411
+
+.button:hover
+    background: linear-gradient(96deg, #ac6115 0%, #9e7a19 100%)
+
+.common-title
+    text-align: center 
+    font-size: 6.4rem 
+    line-height: 8rem
+    font-family: 'Merriweather', sans-serif 
+    text-transform: uppercase 
+    letter-spacing: 1.92px
+    @include respond(tab-land2)
+        font-size: 5rem 
+    @include respond(tab-port4)
+        font-size: 4rem
+        line-height: 8rem
+    @include respond(phone)
+        font-size: 3.5rem
+        line-height: 5rem
+    
+
+.main
+    background-image: url("../img/main_bg.png")
+    background-position: top center
+    overflow: hidden
+    padding: 0 2rem
+
+.header
+    padding: 4rem 0
+
+.header .container
+    display: flex
+    align-items: center
+
+.logo img
+    vertical-align: bottom
+
+.menu
+    margin-left: 19.1rem
+    @include respond(tab-land3)
+        margin-left: 11rem
+    @include respond(tab-port2)
+        margin-left: 5rem
+    @include respond(tab-port5)
+        display: none
+
+.menu-list
+    list-style: none
+    display: flex
+    @include respond(tab-land3)
+        width: 103%
+    @include respond(tab-port2)
+        text-align: center
+
+.menu-item
+    margin-right: 5.5rem
+    @include respond(tab-port2)
+        margin-right: 5.5rem
+        
+    
+
+.menu-item a
+    color: white
+    font-size: 1.8rem
+    text-decoration: none
+    cursor: pointer
+    @include respond(tab-land2)
+        font-size: 1.5rem
+
+
+.menu-item a:hover
+    border-bottom: .2rem solid white
+
+.currency
+    border: .1rem solid white
+    padding: 1.1rem 0
+    box-sizing: border-box
+    border-radius: .5rem
+    width: 4.5rem
+    height: 4.5rem
+    text-align: center
+    cursor: pointer
+    margin-left: auto
+    font-size: 1.8rem
+    user-select: none
+    @include respond(tab-port5)
+        padding: 1.1rem 1.1rem
+
+.main-content
+    padding-top: 10.3rem
+    padding-bottom: 19.9rem
+    @include respond(tab-land)
+        padding-top: 1rem
+    @include respond(tab-port5)
+        padding-bottom: 4rem
+    
+
+.main-content .container
+    position: relative
+
+.main-info
+    max-width: 60.8rem
+    @include respond(tab-land2)
+        margin-left: 2rem
+    @include respond(tab-land3)
+        margin-left: 2rem
+    @include respond(tab-port5)
+        margin: 0 auto
+    
+
+
+.main-small-info
+    background: #d3320f
+    border-radius: 10rem
+    padding: 1.2rem 1.6rem
+    display: inline-block
+    font-size: 1.8rem
+    @include respond(tab-land2)
+        margin-bottom: 5rem
+
+.main-title
+    font-family: 'Merriweather', sans-serif
+    font-size: 12rem
+    line-height: 15.6rem
+    letter-spacing: .4rem
+    margin-bottom: 5.6rem
+    text-transform: uppercase
+    @include respond(tab-land)
+        font-size: 10rem
+        margin-bottom: 1rem
+    @include respond(tab-land2)
+        font-size: 5rem
+        line-height: 6.6rem
+        width: 75%
+    @include respond(tab-port4)
+        font-size: 4rem
+        line-height: 5.6rem
+        width: 64%
+    @include respond(tab-port5)
+        width: 100%
+
+.main-text
+    font-size: 2.4rem
+    line-height: 2.9rem
+    margin-bottom: 5.6rem
+    width: 90%
+    @include respond(tab-land)
+        font-size: 2rem
+        margin-bottom: 2.5rem
+    @include respond(tab-land2)
+        width: 65%
+        margin-bottom: 2.5rem
+    @include respond(tab-port4)
+        font-size: 1.8rem
+        width: 50%
+    @include respond(tab-port5)
+        width: 100%
+
+.main-img
+    width: 100%
+    position: absolute
+    top: -12.3rem
+    left: calc(100% - 99rem)
+    padding-left: 11rem
+    @include respond(tab-land3)
+        left: calc(100% - 87rem)
+        top: -3.3rem
+    @include respond(tab-port)
+        left: calc(100% - 76rem)
+        top: -1.3rem
+    @include respond(tab-port2)
+        left: calc(100% - 71rem)
+    @include respond(tab-port3)
+        left: calc(100% - 66rem)
+    @include respond(tab-port4)
+        top: 3.7rem
+        left: calc(100% - 64rem)
+    @include respond(tab-port5)
+        display: none
+.why
+    background-image: url("../img/whybg.png")
+    background-position: top center
+    background-size: initial
+    padding-bottom: 18rem
+    padding: 0 2rem
+    @include respond(tab-land)
+        margin-bottom: 5rem
+
+
+.why-items
+    margin: 6rem 0
+    display: grid
+    gap: 10rem
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr))
+    justify-content: center
+
+.why-item
+    text-align: center
+
+.why-item-title
+    font-size: 2.4rem 
+    line-height: 2.9rem
+    padding: 2.4rem 0
+
+.why-item-text
+    font-size: 1.6rem 
+    line-height: 140%
+
+
+.products
+    background-image: url("../img/burgers_bg.png")
+    background-position: top center
+    background-size: 140rem
+    padding: 0 2rem 18rem 2rem
+    @include respond(tab-land)
+        padding-bottom: 5rem
+
+.products-items
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr))
+    gap: 2.4rem
+    margin-top: 6rem
+    @include respond(tab-land)
+        margin-top: 5rem
+
+.products-item
+    padding: 3rem
+    background: #211a16
+    border-radius: 1.6rem
+    border: .1rem #353535 solid
+    @include respond(phone)
+        padding: 1rem
+
+.products-item-img
+    height: 25rem
+
+.products-item-img img
+    max-width: 100%
+
+.products-item-title
+    font-size: 2.4rem
+    line-height: 2.9rem
+    margin: 2.4rem 0
+
+.products-item-text
+    font-size: 1.6rem
+    line-height: 140%
+    margin-bottom: 2.4rem
+
+
+.products-item-extra
+    display: flex
+    justify-content: space-between
+
+.products-item-price
+    font-size: 3.2rem
+    line-height: 3.9rem
+    margin-bottom: .8rem
+
+.products-item-weight
+    font-size: 1.6rem
+    line-height: 1.8rem
+    color: #757575
+
+.button.product-button
+    display: flex
+    justify-content: center
+    width: 18.2rem
+    height: 6.2rem 
+
+.button.product-button span:first-child
+    margin-right: 1rem
+
+.order
+    background-image: url("../img/order_bg.png") top center / no-repeat
+    padding-bottom: 18rem
+    overflow: hidden
+
+.order .container
+    position: relative
+
+.order-title
+    @include respond(tab-land3)
+    margin-bottom: 2rem
+
+.order-img
+    width: 100%
+    position: absolute
+    top: 0
+    right: calc(100% - 76.4rem)
+    z-index: -1
+    @include respond(tab-land)
+        right: calc(100% - 71.4rem)
+    @include respond(tab-land2)
+        right: calc(100% - 68rem)
+    @include respond(tab-land3)
+        display: none
+
+.order-form
+    background: #211A16 
+    border-radius: 1.6rem 
+    border: .1rem #353535 solid
+    margin-top: 6rem
+    width: 42.6rem
+    padding: 6rem 4rem
+    box-sizing: border-box
+    margin-left: 66.4rem
+    @include respond(tab-land)
+        margin-left: 65.4rem
+        margin-top: 4rem
+    @include respond(tab-land2)
+        margin-left: 59rem
+    @include respond(tab-land3)
+        margin: 0 auto
+    @include respond(phone)
+        padding-left: 2.7rem
+
+.order-form-text
+    line-height: 2.9rem
+    font-size: 2.4rem
+    text-align: center
+
+.order-form-inputs
+    display: flex
+    flex-direction: column
+    margin-top: 4rem
+
+.order-form-input
+    width: 34.4rem
+    height: 6.2rem
+    background: linear-gradient(95.61deg, #DA8023 0%, #e2b438 100%)
+    border-radius: .8rem
+    margin-bottom: 2rem
+    display: flex
+    align-items: center
+    justify-content: center
+
+.order-form-input input
+    padding: 1.6rem 1rem 
+    background: #211a16
+    border-radius: .8rem
+    color: white
+    width: 34.2rem
+    height: 6rem
+    box-sizing: border-box
+    outline: none
+    border: .1rem solid transparent
+
+.order-form-inputs .button
+    width: 34.4rem
+    height: 6.2rem
+
+.footer
+    padding: 6rem 2rem 6rem 2rem
+
+.footer .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.rights
+    font-size: 1,6rem
+    line-height: 2rem
